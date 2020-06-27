@@ -1,4 +1,8 @@
-<app-nav></app-nav>
+<div (wheel)='scroll($event)' (click)='scroll($event)'>
+    <app-nav [scrollPos]='s'></app-nav>
 
 
-<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
+</div>
+
+<!-- (window:scroll)='scroll($event)' -->
