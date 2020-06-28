@@ -1,0 +1,25 @@
+:host {
+    display: inline-block;
+    width: 9vw;
+    height: 9vw;
+    margin-top: 10px;
+    margin-right: 3px;
+    border: solid;
+    align-content: center;
+    justify-content: center;
+
+    &:hover{
+       
+        background-color: blue;
+    }
+
+   p {
+        color: red;
+
+        text-align: center;
+    }
+
+}
+
+
+
