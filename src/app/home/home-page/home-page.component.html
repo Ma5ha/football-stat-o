@@ -3,6 +3,10 @@
 </video> -->
 
 
-<app-card *ngFor='let p of prop' [card]='p'>
 
-</app-card>
+
+<ng-container *ngFor='let p of prop'>
+    <app-card *ngIf='p' [@flipOnEnter]="{ value: '', params: { delay: p * 100 } }" [card]='p'>
+
+    </app-card>
+</ng-container>

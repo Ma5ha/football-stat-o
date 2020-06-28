@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
+import { rotateInAnimation, slideInDownOnEnterAnimation } from 'angular-animations';
+import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation, flipOnEnterAnimation } from 'angular-animations';
 @Component({
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  styleUrls: ['./home-page.component.scss'],
+  animations: [flipOnEnterAnimation(), slideInDownOnEnterAnimation(), rotateInAnimation({ anchor: 'rotate', duration: 10000, delay: 1000 }), fadeInOnEnterAnimation({ anchor: 'enter', duration: 1000, delay: 1000 })]
 })
 export class HomePageComponent implements OnInit {
 
@@ -12,5 +14,10 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+  t = false
+
+
 
 }
