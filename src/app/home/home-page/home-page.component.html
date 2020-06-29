@@ -8,7 +8,11 @@
 
 </div>
 <ng-container *ngFor='let p of prop; let i= index'>
-    <app-card class="heartbeat" *ngIf=' p' [@slideInLeftOnEnter]="{ value: '', params: { delay: i * 100 } }" [card]='p'>
+    <!-- 
+    <ng-container ngIf='r' [@slideInUp]> -->
+    <app-card (click)='clickHandler(p)' [@fadeOut]='p.team_id === team' class="heartbeat" *ngIf=' p'
+        [@slideInLeftOnEnter]="{ value: '', params: { delay: i * 100 } }" [card]='p'>
 
     </app-card>
+    <!-- </ng-container> -->
 </ng-container>
