@@ -33,8 +33,8 @@ export function expandColapse(h): AnimationTriggerMetadata {
                     top: '0',
                     // padding: '50px',
                     width: '100%',
-                    color: '#34043C'
-
+                    // color: '#34043C'
+                    color: '#50A0CA'
 
 
 
