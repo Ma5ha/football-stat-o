@@ -16,6 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     HttpClientModule
   ],
-  exports: [NavComponent, LayoutComponent, FooterComponent]
+  exports: [NavComponent, LayoutComponent, FooterComponent,]
 })
 export class SharedModule { }

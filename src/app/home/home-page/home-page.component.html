@@ -5,8 +5,8 @@
 
 
 
-<ng-container *ngFor='let p of prop'>
-    <app-card *ngIf='p' [@flipOnEnter]="{ value: '', params: { delay: p * 100 } }" [card]='p'>
+<ng-container *ngFor='let p of prop; let i= index'>
+    <app-card class="heartbeat" *ngIf=' p' [@slideInLeftOnEnter]="{ value: '', params: { delay: i * 100 } }" [card]='p'>
 
     </app-card>
 </ng-container>
