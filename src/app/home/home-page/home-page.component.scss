@@ -11,4 +11,11 @@ img {
     position: absolute;
     margin: auto;
     width: 50%;
+    z-index: -1;
+}
+
+
+.flex-container {
+    display: flex;
+    justify-content: center;
 }

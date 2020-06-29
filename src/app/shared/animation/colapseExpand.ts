@@ -10,6 +10,7 @@ export function expandColapse(h): AnimationTriggerMetadata {
                         position: 'fixed',
                         top: '0',
                         width: '100%',
+
                     },
 
 
@@ -32,6 +33,8 @@ export function expandColapse(h): AnimationTriggerMetadata {
                     top: '0',
                     // padding: '50px',
                     width: '100%',
+                    color: '#34043C'
+
 
 
 

@@ -1,4 +1,5 @@
 :host  {
+   
 
   height: 400px;  
    background-color: #34043C;
@@ -16,6 +17,13 @@
 
 display: flex;
   flex-direction: row;
+
+
+ color: white;
+
+ text-transform: uppercase;
+    
+  
 }
 
 
@@ -43,7 +51,7 @@ margin-left: 10px;
     text-transform: uppercase;
     margin-left: 10px;
    
-    color:#EDAC07;
+    // color: black;
     font-style: Franklin Gothic Medium;
 }
 
@@ -53,7 +61,7 @@ margin-left: 10px;
     // position: absolute;
     // align-self:flex-start;
     text-align: center;
-    color: #50A0CA;
+    // color: #ffffff;
      margin-top: 100px;
   
     
