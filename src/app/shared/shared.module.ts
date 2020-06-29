@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DeleteModule } from '../delete/delete.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     BrowserModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    DeleteModule
   ],
   exports: [NavComponent, LayoutComponent, FooterComponent,]
 })

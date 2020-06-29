@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DeleteModule } from './delete/delete.module';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +21,6 @@ import { DeleteModule } from './delete/delete.module';
 
     BrowserAnimationsModule,
 
-    DeleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
