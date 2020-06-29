@@ -35,6 +35,7 @@ export function expandColapse(h): AnimationTriggerMetadata {
 
 
 
+
                 })
             ),
             transition('expand => colapse', [animate("1s ease-in")]),

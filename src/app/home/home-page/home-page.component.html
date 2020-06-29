@@ -1,12 +1,14 @@
 <!-- <video autoplay loop>
     <source src='../../../assets/trailer.mp4' type="video/mp4">
 </video> -->
+<div>
+    <img src='../../../assets/pl.png'>
 
-<img src='../../../assets/pl.png'>
 
+    <ng-container *ngFor='let p of prop; let i= index'>
+        <app-card class="heartbeat" *ngIf=' p' [@slideInLeftOnEnter]="{ value: '', params: { delay: i * 100 } }"
+            [card]='p'>
 
-<ng-container *ngFor='let p of prop; let i= index'>
-    <app-card class="heartbeat" *ngIf=' p' [@slideInLeftOnEnter]="{ value: '', params: { delay: i * 100 } }" [card]='p'>
-
-    </app-card>
-</ng-container>
+        </app-card>
+    </ng-container>
+</div>

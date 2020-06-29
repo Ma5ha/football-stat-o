@@ -9,6 +9,8 @@
 
     overflow: hidden;
     top: '0';
+    z-index:1;
+    border-bottom: 1px solid #34043C;
 // }
 
 
@@ -22,6 +24,10 @@ img {
     width: 100px;
     height: 100px;
     // position: absolute;
+    border-radius: 200px 200px 200px 200px;
+-moz-border-radius: 200px 200px 200px 200px;
+-webkit-border-radius: 200px 200px 200px 200px;
+margin-left: 10px;
    
 }
 
@@ -48,7 +54,7 @@ img {
     // position: absolute;
     // align-self:flex-start;
     text-align: center;
-    color: grey;
+    color: #50A0CA;
      margin-top: 100px;
   
     
