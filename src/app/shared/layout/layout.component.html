@@ -1,4 +1,7 @@
-<app-nav></app-nav>
-<router-outlet>
+<app-nav [@expandColapse]='scrollHandler()? "expand": "colapse"'></app-nav>
 
+<router-outlet>
 </router-outlet>
+
+
+=

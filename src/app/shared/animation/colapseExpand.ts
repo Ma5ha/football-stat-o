@@ -27,12 +27,12 @@ export function expandColapse(h): AnimationTriggerMetadata {
                 style({
                     height: '100px',
                     backgroundColor: 'white',
-                    borderStyle: 'solid',
+                    // borderStyle: 'solid',
                     position: 'fixed',
                     top: '0',
-                    padding: '50px',
+                    // padding: '50px',
                     width: '100%',
-                    display: 'none'
+
 
 
                 })
