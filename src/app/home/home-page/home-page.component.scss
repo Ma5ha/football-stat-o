@@ -1,9 +1,14 @@
 :host {
     display: block;
     padding-left: 24px;
-
-    
+    position: relative;
+    margin-top: 100px;
 }
-div {
-    overflow: hidden;
+
+img {
+    opacity: 0.3;
+   
+    position: absolute;
+    margin: auto;
+    width: 50%;
 }
