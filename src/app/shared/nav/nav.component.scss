@@ -1,8 +1,54 @@
 :host  {
-    display: block;
-    height: 200px;
-    background-color: #34043C;
-    justify-content: center;
-    align-content: center;
+//     display: flex;
+  height: 400px;  
+   background-color: #34043C;
+    justify-content: space-between;
+//     // align-content: center;
+//     position: relative;
+//     flex-direction: row;
+
+    overflow: hidden;
+// }
+
+
+
+display: flex;
+  flex-direction: row;
+}
+
+
+img {
+    width: 100px;
+    height: 100px;
+    // position: absolute;
+   
+}
+
+
+.right{
+    // float: right;
+    margin-right: 40px;
+    // align-self: center;
+    margin-top: 10px ;
+    // position: absolute;
+}
+.route{
+    float: left;
+    text-transform: uppercase;
+    margin-left: 10px;
+   
+    color:#EDAC07;
+    font-style: Franklin Gothic Medium;
+}
+
+.large {
+        // display: flex;
+        justify-self:center;
+    // position: absolute;
+    // align-self:flex-start;
+    text-align: center;
+    color: grey;
+     margin-top: 100px;
+  
     
 }
