@@ -1,6 +1,8 @@
-nav {
+:host  {
+    display: block;
     height: 200px;
     background-color: #34043C;
     justify-content: center;
     align-content: center;
+    
 }
