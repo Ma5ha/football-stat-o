@@ -2,18 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { rotateInAnimation, slideInDownOnEnterAnimation, flipInYOnEnterAnimation, slideInUpAnimation, fadeOutAnimation } from 'angular-animations';
 import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation, flipOnEnterAnimation, slideInLeftOnEnterAnimation, } from 'angular-animations';
 import { StandigsService } from '../../shared/services/standigs.service'
+import { Router } from '@angular/router';
 
 
 @Component({
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
-  animations: [fadeOutAnimation(), flipInYOnEnterAnimation(), slideInLeftOnEnterAnimation(), flipOnEnterAnimation(), slideInDownOnEnterAnimation(), rotateInAnimation({ anchor: 'rotate', duration: 10000, delay: 1000 }), fadeInOnEnterAnimation({ anchor: 'enter', duration: 1000, delay: 1000 })]
+  animations: [fadeOutAnimation(), flipInYOnEnterAnimation(), slideInLeftOnEnterAnimation(),]
 })
 export class HomePageComponent implements OnInit {
 
   // prop = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
   prop
-  constructor(private standingService: StandigsService) { }
+  constructor(private standingService: StandigsService, private s: Router) { }
 
   ngOnInit(): void {
     this.standingService.getStandings().subscribe(
@@ -31,6 +32,8 @@ export class HomePageComponent implements OnInit {
   clickHandler(p) {
 
     this.team = p.team_id
+    this.s.navigate(['d'])
+
   }
 
 }

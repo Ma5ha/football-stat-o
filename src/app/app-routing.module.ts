@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DummyPageComponent } from './delete/dummy-page/dummy-page.component';
 
 
 const routes: Routes = [
@@ -7,6 +8,10 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'd',
+    component: DummyPageComponent
   }
 ];
 
