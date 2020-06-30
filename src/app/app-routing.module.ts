@@ -9,10 +9,7 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  {
-    path: 'd',
-    component: DummyPageComponent
-  }
+
 ];
 
 @NgModule({
