@@ -58,15 +58,15 @@
 <table class="table  table-striped table-hover">
     <thead class=" thead-dark ">
         <th scope=" col" (click)='reverseStandings()'>R</th>
-        <th scope="col">Team</th>
-        <th scope="col">P</th>
-        <th scope="col">W</th>
-        <th scope="col">D</th>
-        <th scope="col">L</th>
-        <th scope="col">GF</th>
-        <th scope="col">GA</th>
+        <th scope="col" (click)='sortByName()'>Team</th>
+        <th scope="col" (click)='sortByMostPlayed()'>P</th>
+        <th scope="col" (click)='sortByMostWins()'>W</th>
+        <th scope="col" (click)='sortByMostDraws()'>D</th>
+        <th scope="col" (click)='sortByMostLoses()'>L</th>
+        <th scope="col" (click)='sortByGoalsFor()'>GF</th>
+        <th scope="col" (click)='sortByGoalsAlowed()'>GA</th>
 
-        <th scope="col">Pts</th>
+        <th scope="col" (click)='sortByPts()'>Pts</th>
 
     </thead>
     <tbody>
