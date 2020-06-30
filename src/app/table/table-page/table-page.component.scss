@@ -27,12 +27,10 @@ th, td, tr {
     border-bottom:  1px solid white;
   }
 
-// tr[scope=row]:hover{
-//       background-color: #D01A4A;
-//       opacity: 0.2;
-//       color: black;
+th[scope=col]{
+      cursor: pointer;
 
-//   }
+  }
 
  .champions_league {
     color:#64AB47

@@ -196,7 +196,7 @@ export class TablePageComponent implements OnInit {
 
   sortByPts() {
 
-    if (this.selected === 'p') {
+    if (this.selected === 'pts') {
       this.standings.reverse()
       return
     }
@@ -213,7 +213,7 @@ export class TablePageComponent implements OnInit {
       })
     this.standings.reverse()
 
-    this.selected = 'p'
+    this.selected = 'pts'
 
   }
 
