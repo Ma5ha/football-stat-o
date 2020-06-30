@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { StandigsService } from 'src/app/shared/services/standigs.service';
+import { Club } from 'src/app/shared/types/club';
+
 
 @Component({
   selector: 'app-table-page',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablePageComponent implements OnInit {
 
-  constructor() { }
+
+  standings: Club[]
+
+  constructor(private standingsService: StandigsService) { }
 
   ngOnInit(): void {
+    this.standingsService.getStandings().subscribe(
+      result => { this.standings = result },
+      error => { console.error(error) }
+    )
+
+
+
+
+
+
   }
 
 }

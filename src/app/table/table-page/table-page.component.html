@@ -1,1 +1,55 @@
-<p>table-page works!</p>
+<table class="table table-hover table-borderless table-dark ">
+    <tr>
+
+
+        <th scope="col">R</th>
+        <th scope="col">Team</th>
+        <th scope="col">P</th>
+        <th scope="col">W</th>
+        <th scope="col">D</th>
+        <th scope="col">L</th>
+        <th scope="col">GF</th>
+        <th scope="col">GA</th>
+
+        <th scope="col">Pts</th>
+
+
+
+    </tr>
+    <tr *ngFor='let club of standings' scope="row">
+        <th
+            [ngClass]="{ league_europe: club.overall_league_position == 5, champions_league: club.overall_league_position <=4, relegation : club.overall_league_position>17}  ">
+            {{club.overall_league_position}}
+        </th>
+
+        <td>
+            {{club.team_name}}
+        </td>
+        <td>
+            {{club.overall_league_payed}}
+        </td>
+        <td>
+            {{club.overall_league_W}}
+        </td>
+        <td>
+            {{club.overall_league_D}}
+        </td>
+        <td>
+            {{club.overall_league_L}}
+        </td>
+        <td>
+            {{club.overall_league_GF}}
+        </td>
+        <td>
+            {{club.overall_league_GA}}
+        </td>
+
+        <td>
+            {{club.overall_league_PTS}}
+        </td>
+
+
+
+
+    </tr>
+</table>
