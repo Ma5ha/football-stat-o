@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DeleteModule } from '../delete/delete.module';
+import { TableModule } from '../table/table.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { DeleteModule } from '../delete/delete.module';
     BrowserModule,
     RouterModule,
     HttpClientModule,
-    DeleteModule
+    DeleteModule,
+    TableModule
   ],
   exports: [NavComponent, LayoutComponent, FooterComponent,]
 })
