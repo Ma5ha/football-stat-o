@@ -27,5 +27,8 @@ export class TablePageComponent implements OnInit {
 
 
   }
+  reverseStandings() {
+    this.standings = this.standings.reverse()
+  }
 
 }
