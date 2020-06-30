@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StandigsService } from 'src/app/shared/services/standigs.service';
 import { Club } from 'src/app/shared/types/club';
-import { isFunction } from 'util';
+
 
 
 @Component({
@@ -13,6 +13,8 @@ export class TablePageComponent implements OnInit {
 
 
   standings: Club[]
+
+  selected
 
   constructor(private standingsService: StandigsService) { }
 
@@ -29,17 +31,27 @@ export class TablePageComponent implements OnInit {
 
   }
   reverseStandings(): void {
+
+    if (this.selected === 'r') {
+      this.standings.reverse()
+      return
+    }
+
     this.standings.sort(
       (clubA, clubB) => {
         return parseInt(clubA.overall_league_position) - parseInt(clubB.overall_league_position)
 
       })
+    this.selected = 'r'
 
   }
 
   sortByName(): void {
 
-
+    if (this.selected === 'team') {
+      this.standings.reverse()
+      return
+    }
 
 
     this.standings.sort(
@@ -50,12 +62,19 @@ export class TablePageComponent implements OnInit {
 
       })
 
+    this.selected = 'team'
 
 
 
 
   }
   sortByMostPlayed() {
+
+    if (this.selected === 'p') {
+      this.standings.reverse()
+      return
+    }
+
     this.standings.sort(
       (clubA, clubB) => {
         if (clubA.overall_league_payed < clubB.overall_league_payed) return 1
@@ -63,11 +82,19 @@ export class TablePageComponent implements OnInit {
         return 0
 
       })
+    this.selected = 'p'
 
 
   }
 
   sortByMostWins() {
+
+
+    if (this.selected === 'w') {
+      this.standings.reverse()
+      return
+    }
+
     this.standings.sort(
       (clubA, clubB) => {
         // if (clubA.overall_league_W < clubB.overall_league_W) return 1
@@ -77,9 +104,17 @@ export class TablePageComponent implements OnInit {
         return parseInt(clubA.overall_league_W) - parseInt(clubB.overall_league_W)
       })
     this.standings.reverse()
+    this.selected = 'w'
   }
 
   sortByMostDraws() {
+
+    if (this.selected === 'd') {
+      this.standings.reverse()
+      return
+    }
+
+
     this.standings.sort(
       (clubA, clubB) => {
         // if (clubA.overall_league_W < clubB.overall_league_W) return 1
@@ -87,11 +122,22 @@ export class TablePageComponent implements OnInit {
         // return 0
 
         return parseInt(clubA.overall_league_D) - parseInt(clubB.overall_league_D)
+
+
       })
     this.standings.reverse()
+    this.selected = 'd'
 
   }
   sortByMostLoses() {
+
+
+    if (this.selected === 'l') {
+      this.standings.reverse()
+      return
+    }
+
+
     this.standings.sort(
       (clubA, clubB) => {
         // if (clubA.overall_league_W < clubB.overall_league_W) return 1
@@ -101,10 +147,18 @@ export class TablePageComponent implements OnInit {
         return parseInt(clubA.overall_league_L) - parseInt(clubB.overall_league_L)
       })
     this.standings.reverse()
-
+    this.selected = 'l'
 
   }
   sortByGoalsFor() {
+
+
+    if (this.selected === 'gf') {
+      this.standings.reverse()
+      return
+    }
+
+
     this.standings.sort(
       (clubA, clubB) => {
         // if (clubA.overall_league_W < clubB.overall_league_W) return 1
@@ -114,10 +168,19 @@ export class TablePageComponent implements OnInit {
         return parseInt(clubA.overall_league_GF) - parseInt(clubB.overall_league_GF)
       })
     this.standings.reverse()
-
+    this.selected = 'gf'
 
   }
   sortByGoalsAlowed() {
+
+
+    if (this.selected === 'ga') {
+      this.standings.reverse()
+      return
+    }
+
+
+
     this.standings.sort(
       (clubA, clubB) => {
         // if (clubA.overall_league_W < clubB.overall_league_W) return 1
@@ -127,11 +190,19 @@ export class TablePageComponent implements OnInit {
         return parseInt(clubA.overall_league_GA) - parseInt(clubB.overall_league_GA)
       })
     this.standings.reverse()
-
+    this.selected = 'ga'
 
   }
 
   sortByPts() {
+
+    if (this.selected === 'p') {
+      this.standings.reverse()
+      return
+    }
+
+
+
     this.standings.sort(
       (clubA, clubB) => {
         // if (clubA.overall_league_W < clubB.overall_league_W) return 1
@@ -142,7 +213,7 @@ export class TablePageComponent implements OnInit {
       })
     this.standings.reverse()
 
-
+    this.selected = 'p'
 
   }
 

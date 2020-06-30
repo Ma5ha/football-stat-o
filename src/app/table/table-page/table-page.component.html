@@ -57,14 +57,14 @@
 
 <table class="table  table-striped table-hover">
     <thead class=" thead-dark ">
-        <th scope=" col" (click)='reverseStandings()'>R</th>
-        <th scope="col" (click)='sortByName()'>Team</th>
-        <th scope="col" (click)='sortByMostPlayed()'>P</th>
-        <th scope="col" (click)='sortByMostWins()'>W</th>
-        <th scope="col" (click)='sortByMostDraws()'>D</th>
-        <th scope="col" (click)='sortByMostLoses()'>L</th>
-        <th scope="col" (click)='sortByGoalsFor()'>GF</th>
-        <th scope="col" (click)='sortByGoalsAlowed()'>GA</th>
+        <th scope=" col" (click)='reverseStandings()' [ngClass]="{selected: selected === 'r'}">R</th>
+        <th scope="col" (click)='sortByName()' [ngClass]="{selected: selected === 'team'}">Team</th>
+        <th scope="col" (click)='sortByMostPlayed()' [ngClass]="{selected: selected === 'p'}">P</th>
+        <th scope="col" (click)='sortByMostWins()' [ngClass]="{selected: selected === 'w'}">W</th>
+        <th scope="col" (click)='sortByMostDraws()' [ngClass]="{selected: selected === 'd'}">D</th>
+        <th scope="col" (click)='sortByMostLoses()' [ngClass]="{selected: selected === 'l'}">L</th>
+        <th scope="col" (click)='sortByGoalsFor()' [ngClass]="{selected: selected === 'gf'}">GF</th>
+        <th scope="col" (click)='sortByGoalsAlowed()' [ngClass]="{selected: selected === 'ga'}">GA</th>
 
         <th scope="col" (click)='sortByPts()'>Pts</th>
 
