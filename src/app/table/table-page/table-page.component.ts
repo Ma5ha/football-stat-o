@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StandigsService } from 'src/app/shared/services/standigs.service';
 import { Club } from 'src/app/shared/types/club';
 import * as moment from 'moment';
+import { Fixture } from 'src/app/shared/types/fixture';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class TablePageComponent implements OnInit {
 
   standings: Club[]
 
-  todayFixtures
+  todayFixtures: Fixture[]
 
   selected
 
