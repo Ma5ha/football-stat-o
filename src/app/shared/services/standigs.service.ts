@@ -23,7 +23,7 @@ export class StandigsService {
   getStandings(): Observable<Club[]> {
     return this.standingsService.get<Club[]>(`${environment.apiBase}get_standings&league_id=148${environment.apiKey}`)
   }
-  getFixtures(from: string, to: number): Observable<object> {
+  getFixtures(from: string, to: string): Observable<object> {
 
 
     let get_events = `get_events&from=${from}&to=${to}&league_id`
