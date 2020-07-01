@@ -33,16 +33,72 @@ th[scope=col]{
   }
 
  .champions_league {
-    color:#64AB47
+    color:#64AB47;
+
+    
  }
  .league_europe {
-     color:#50A0CA
+     color:#50A0CA;
+
+    
  }
 
  .relegation{
-     color: #EDAC07
+     color: #EDAC07;
+    
  }
 
  th.selected {
      color: #50A0CA;
  }
+ ul {
+     margin: auto;
+     list-style: none;
+     display: block;
+     padding:0px;
+ }
+ li {
+     float: left;
+     margin-left: 10px;
+
+    text-align: center;
+    text-transform: uppercase;
+    text-size-adjust: auto;
+    &:after {
+        content: ' | ';
+    }
+
+ }
+ .legend {
+    margin-top: 20px;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    display: flex;
+    height: 20px;
+    align-items: center;
+     
+ 
+ }
+
+ span{
+    width: 10px;
+    height: 10px;
+    
+    display: inline-block;
+    &[scope=champions-league]{
+        background-color: #64AB47;
+    }
+    &[scope=europa-league]{
+        background-color: #50A0CA;
+    
+     }
+     &[scope=relegations]{
+        background-color: #EDAC07;
+    
+     }
+    
+   }
+  
+
+ 
