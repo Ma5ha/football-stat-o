@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StandigsService } from 'src/app/shared/services/standigs.service';
 import { Club } from 'src/app/shared/types/club';
-
+import * as moment from 'moment';
 
 
 @Component({
@@ -14,6 +14,8 @@ export class TablePageComponent implements OnInit {
 
   standings: Club[]
 
+  todayFixtures
+
   selected
 
   constructor(private standingsService: StandigsService) { }
@@ -22,6 +24,9 @@ export class TablePageComponent implements OnInit {
     this.standingsService.getStandings().subscribe(
       result => { this.standings = result },
       error => { console.error(error) }
+
+
+
     )
 
 
@@ -214,6 +219,17 @@ export class TablePageComponent implements OnInit {
     this.standings.reverse()
 
     this.selected = 'pts'
+
+  }
+
+  getTodayFixtures() {
+    let today = (moment().format("YYYY-MM-DD"))
+    this.standingsService.getFixtures(today, today).subscribe(fixtures => {
+      this.todayFixtures = fixtures
+    },
+      error => {
+
+      })
 
   }
 
