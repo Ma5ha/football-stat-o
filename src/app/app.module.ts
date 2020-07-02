@@ -7,6 +7,7 @@ import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableModule } from './table/table.module';
+import { TeamModule } from './team/team.module';
 
 
 @NgModule({
@@ -23,6 +24,8 @@ import { TableModule } from './table/table.module';
     BrowserAnimationsModule,
 
     TableModule,
+
+    TeamModule,
 
   ],
   providers: [],
