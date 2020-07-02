@@ -24,10 +24,10 @@ export class StandigsService {
   getStandings(): Observable<Club[]> {
     return this.standingsService.get<Club[]>(`${environment.apiBase}get_standings&league_id=148${environment.apiKey}`)
   }
-  getFixtures(from: string, to: string): Observable<Fixture[]> {
+  getFixtures(date: string): Observable<Fixture[]> {
 
 
-    let get_events = `get_events&from=${from}&to=${to}&league_id`
+    let get_events = `get_events&from=${date}&to=${date}&league_id`
     return this.standingsService.get<Fixture[]>(`${environment.apiBase}${get_events}&league_id=148${environment.apiKey}`)
   }
 

@@ -15,9 +15,21 @@ export class TablePageComponent implements OnInit {
 
   standings: Club[]
 
-  todayFixtures: Fixture[]
+
 
   selected
+
+  date = moment()
+
+  mondayFixures: Fixture[];
+  tuesdayFixures: Fixture[]
+  wednesdayFixures: Fixture[]
+  thursdayFixures: Fixture[]
+  fridayFixures: Fixture[]
+  saturdayFixures: Fixture[]
+
+  sundayFixtures: Fixture[]
+
 
   constructor(private standingsService: StandigsService) { }
 
@@ -31,11 +43,17 @@ export class TablePageComponent implements OnInit {
     )
 
 
-
-
+    this.getMondayFixures()
+    this.getTuesdayFixures()
+    this.getWednesdayFixures()
+    this.getThursdayFixures()
+    this.getFridayFixtures()
+    this.getSaturdayFixtures()
+    this.getSundayFixtures()
 
 
   }
+
   reverseStandings(): void {
 
     if (this.selected === 'r') {
@@ -223,16 +241,109 @@ export class TablePageComponent implements OnInit {
 
   }
 
-  getTodayFixtures() {
-    let today = (moment().format("YYYY-MM-DD"))
-    this.standingsService.getFixtures(today, today).subscribe(fixtures => {
-      this.todayFixtures = fixtures
-    },
-      error => {
 
-      })
+
+  getMondayFixures(): void {
+
+    let monday = moment().isoWeekday(1).format("YYYY-MM-DD")
+    this.standingsService.getFixtures(monday).subscribe(fixtures => {
+      this.mondayFixures = fixtures
+
+
+
+
+
+    })
+
+
 
   }
+
+
+  getTuesdayFixures(): void {
+
+    let tuesday = moment().isoWeekday(2).format("YYYY-MM-DD")
+    this.standingsService.getFixtures(tuesday).subscribe(fixtures => {
+      this.tuesdayFixures = fixtures
+
+
+    })
+
+
+
+  }
+
+  getWednesdayFixures(): void {
+
+    let wednesday = moment().isoWeekday(3).format("YYYY-MM-DD")
+    this.standingsService.getFixtures(wednesday).subscribe(fixtures => {
+      this.wednesdayFixures = fixtures
+
+
+    })
+
+
+
+  }
+  getThursdayFixures(): void {
+
+    let thursday = moment().isoWeekday(4).format("YYYY-MM-DD")
+    this.standingsService.getFixtures(thursday).subscribe(fixtures => {
+      this.thursdayFixures = fixtures
+
+
+    })
+
+
+
+  }
+
+  getFridayFixtures(): void {
+
+    let friday = moment().isoWeekday(5).format("YYYY-MM-DD")
+    this.standingsService.getFixtures(friday).subscribe(fixtures => {
+      this.fridayFixures = fixtures
+
+
+
+
+    })
+
+
+
+  }
+  getSaturdayFixtures(): void {
+
+    let saturday = moment().isoWeekday(6).format("YYYY-MM-DD")
+    this.standingsService.getFixtures(saturday).subscribe(fixtures => {
+      this.saturdayFixures = fixtures
+
+
+
+    })
+
+
+
+  }
+
+  getSundayFixtures(): void {
+
+    let sunday = moment().isoWeekday(7).format("YYYY-MM-DD")
+    this.standingsService.getFixtures(sunday).subscribe(fixtures => {
+      this.sundayFixtures = fixtures
+
+
+
+    })
+
+
+
+  }
+
+  typeCheck(prop): boolean {
+    return prop instanceof Array
+  }
+
 
 }
 
