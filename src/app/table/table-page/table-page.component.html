@@ -167,7 +167,11 @@ wednesdayFixures: Fixture[]
         <tbody>
             <tr scope="row" *ngFor='let fixture of tuesdayFixures'>
                 <th>{{fixture.match_time}}</th>
-                <td>{{fixture.match_hometeam_name}}
+
+                <td>
+                    <img [src]='fixture.team_home_badge'>
+
+                    {{fixture.match_hometeam_name}}
                     {{fixture.match_hometeam_score}}
 
                     -
