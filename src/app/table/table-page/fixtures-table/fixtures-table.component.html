@@ -1,1 +1,41 @@
-<p>fixtures-table works!</p>
+<table class="table table-striped table-hover table-borderless">
+
+    <thead>
+        <tr>
+            <th scope="col" class='column'>
+                #
+            </th>
+            <th scope="col">
+                {{date}}
+            </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr scope="row" *ngFor='let fixture of fixtures'>
+            <th>{{fixture.match_time}}</th>
+
+            <td>
+                <img [src]='fixture.team_home_badge'>
+
+                {{fixture.match_hometeam_name}}
+                {{fixture.match_hometeam_score}}
+
+                -
+                {{fixture.match_awayteam_score}}
+                {{fixture.match_awayteam_name}}
+
+                <img [src]='fixture.team_away_badge'>
+
+
+                <p>{{fixture.match_status}}</p>
+
+
+            </td>
+
+        </tr>
+
+
+    </tbody>
+</table>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { StandigsService } from 'src/app/shared/services/standigs.service';
 import { Club } from 'src/app/shared/types/club';
 import * as moment from 'moment';
@@ -8,7 +8,8 @@ import { Fixture } from 'src/app/shared/types/fixture';
 @Component({
   selector: 'app-table-page',
   templateUrl: './table-page.component.html',
-  styleUrls: ['./table-page.component.scss']
+  styleUrls: ['./table-page.component.scss'],
+
 })
 export class TablePageComponent implements OnInit {
 

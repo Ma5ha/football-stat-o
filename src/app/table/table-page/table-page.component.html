@@ -118,173 +118,44 @@ wednesdayFixures: Fixture[]
 <ng-container *ngIf='typeCheck(mondayFixures)'>
 
 
-    <table class="table table-striped table-hover table-borderless">
-
-        <thead>
-            <tr>
-                <th scope="col" class='column'>
-                    #
-                </th>
-                <th scope="col">
-                    Monday {{date.isoWeekday(1).format("YYYY-MM-DD")}}
-                </th>
-
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr scope="row" *ngFor='let fixture of mondayFixures'>
-                <th>{{fixture.match_time}}</th>
-                <td>{{fixture.match_hometeam_name}}
-                    {{fixture.match_hometeam_ft_score
-                }}-{{fixture.match_awayteam_ft_score}}
-                    {{fixture.match_awayteam_name}}</td>
-
-            </tr>
-
-
-        </tbody>
-    </table>
-
+    <app-fixtures-table date='Monday {{date.isoWeekday(1).format("YYYY-MM-DD")}}' [fixtures]='mondayFixures'>
+    </app-fixtures-table>
 </ng-container>
 
 
 <ng-container *ngIf='typeCheck(tuesdayFixures)'>
-    <table class="table table-striped table-hover table-borderless">
-
-        <thead>
-            <tr>
-                <th scope="col" class='column'>
-                    #
-                </th>
-                <th scope="col">
-                    Tuesday {{date.isoWeekday(2).format("YYYY-MM-DD")}}
-                </th>
+    <app-fixtures-table date='Tuesday {{date.isoWeekday(2).format("YYYY-MM-DD")}}' [fixtures]='tuesdayFixures'>
+    </app-fixtures-table>
 
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr scope="row" *ngFor='let fixture of tuesdayFixures'>
-                <th>{{fixture.match_time}}</th>
-
-                <td>
-                    <img [src]='fixture.team_home_badge'>
-
-                    {{fixture.match_hometeam_name}}
-                    {{fixture.match_hometeam_score}}
-
-                    -
-                    {{fixture.match_awayteam_score}}
-                    {{fixture.match_awayteam_name}}</td>
-
-            </tr>
-
-
-        </tbody>
-    </table>
 </ng-container>
 
 
 <ng-container *ngIf='typeCheck(wednesdayFixures)'>
+    <app-fixtures-table date='Wednesday {{date.isoWeekday(3).format("YYYY-MM-DD")}}' [fixtures]='wednesdayFixures'>
+    </app-fixtures-table>
 
-
-    <table class="table table-striped table-hover table-borderless">
-
-        <thead>
-            <tr>
-                <th scope="col" class='column'>
-                    #
-                </th>
-                <th scope="col">
-                    Wednesday {{date.isoWeekday(3).format("YYYY-MM-DD")}}
-                </th>
-
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr scope="row" *ngFor='let fixture of wednesdayFixures'>
-                <th>{{fixture.match_time}}</th>
-                <td>{{fixture.match_hometeam_name}} {{fixture.match_hometeam_score}}
-
-                    -
-                    {{fixture.match_awayteam_score}} {{fixture.match_awayteam_name}}</td>
-
-            </tr>
-
-
-        </tbody>
-    </table>
 
 </ng-container>
 
 
 
 <ng-container *ngIf='typeCheck(thursdayFixures)'>
-    <table class="table table-striped table-hover table-borderless">
 
-        <thead>
-            <tr>
-                <th scope="col" class='column'>
-                    #
-                </th>
-                <th scope="col">
-                    Thursday {{date.isoWeekday(4).format("YYYY-MM-DD")}}
-                </th>
+    <app-fixtures-table date='Thursday {{date.isoWeekday(4).format("YYYY-MM-DD")}}' [fixtures]='thursdayFixures'>
+    </app-fixtures-table>
 
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr scope="row" *ngFor='let fixture of thursdayFixures '>
-                <th>{{fixture.match_time}}</th>
-                <td>{{fixture.match_hometeam_name}} {{fixture.match_hometeam_score}}
-
-                    -
-                    {{fixture.match_awayteam_score}} {{fixture.match_awayteam_name}}</td>
-
-            </tr>
-
-
-        </tbody>
-    </table>
 </ng-container>
 
 
 <ng-container *ngIf='typeCheck(fridayFixures)'>
 
 
+    <app-fixtures-table date='Friday {{date.isoWeekday(5).format("YYYY-MM-DD")}}' [fixtures]='fridayFixures'>
+    </app-fixtures-table>
 
 
-    <table class="table table-striped table-hover table-borderless">
 
-        <thead>
-            <tr>
-                <th scope="col" class='column'>
-                    #
-                </th>
-                <th scope="col">
-                    Friday {{date.isoWeekday(5).format("YYYY-MM-DD")}}
-                </th>
-
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr scope="row" *ngFor='let fixture of fridayFixures'>
-                <th>{{fixture.match_time}}</th>
-                <td>{{fixture.match_hometeam_name}} {{fixture.match_hometeam_score}}
-
-                    -
-                    {{fixture.match_awayteam_score}}{{fixture.match_awayteam_name}}
-                </td>
-
-            </tr>
-
-
-        </tbody>
-    </table>
 
 
 
@@ -292,66 +163,22 @@ wednesdayFixures: Fixture[]
 
 <ng-container *ngIf='typeCheck(saturdayFixures)'>
 
-    <table class="table table-striped table-hover table-borderless">
 
-        <thead>
-            <tr>
-                <th scope="col" class='column'>
-                    #
-                </th>
-                <th scope="col">
-                    Saturday {{date.isoWeekday(6).format("YYYY-MM-DD")}}
-                </th>
+    <app-fixtures-table date='Saturday {{date.isoWeekday(6).format("YYYY-MM-DD")}}' [fixtures]='saturdayFixures'>
+    </app-fixtures-table>
 
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr scope="row" *ngFor='let fixture of saturdayFixures'>
-                <th>{{fixture.match_time}}</th>
-                <td>{{fixture.match_hometeam_name}} {{fixture.match_hometeam_score}}
-
-                    -
-                    {{fixture.match_awayteam_score}} {{fixture.match_awayteam_name}}</td>
-
-            </tr>
-
-
-        </tbody>
-    </table>
 
 
 </ng-container>
 
 <ng-container *ngIf='typeCheck(sundayFixtures)'>
 
-
-    <table class="table table-striped table-hover table-borderless">
-
-        <thead>
-            <tr>
-                <th scope="col" class='column'>
-                    #
-                </th>
-                <th scope="col">
-                    Sunday {{date.isoWeekday(7).format("YYYY-MM-DD")}}
-                </th>
+    <app-fixtures-table date='Sunday {{date.isoWeekday(7).format("YYYY-MM-DD")}}' [fixtures]='sundayFixtures'>
+    </app-fixtures-table>
 
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr scope="row" *ngFor='let fixture of sundayFixtures'>
-                <th>{{fixture.match_time}}</th>
-                <td>{{fixture.match_hometeam_name}} {{fixture.match_hometeam_score}}
-
-                    -
-                    {{fixture.match_awayteam_score}} {{fixture.match_awayteam_name}}</td>
-
-            </tr>
 
 
-        </tbody>
-    </table>
 
 </ng-container>
