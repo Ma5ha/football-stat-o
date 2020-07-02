@@ -13,6 +13,8 @@ import { Fixture } from 'src/app/shared/types/fixture';
 export class TablePageComponent implements OnInit {
 
 
+  season: string = `${moment().subtract(1, 'years').format('YY')}/${moment().format('YY')}`
+
   standings: Club[]
 
 
