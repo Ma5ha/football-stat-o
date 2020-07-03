@@ -11,6 +11,7 @@ export class TeamPageComponent implements OnInit {
 
 
   team
+  players
 
   constructor(private activatedRoute: ActivatedRoute, private standingsService: StandigsService) { }
 
@@ -23,6 +24,8 @@ export class TeamPageComponent implements OnInit {
       r => {
         this.team = r
         // console.table(this.team[0].players)
+        this.players = r[0].players
+
         console.table(r)
       }
     )

@@ -3,7 +3,10 @@
 
 <img [src]='team[0].team_badge'>
 
-<div *ngFor='let player of team[0].players'>
+<!-- <div *ngFor='let player of team[0].players'>
     {{player.player_name}}
 
-</div>
+</div> -->
+
+
+<app-players-table [players]='players'></app-players-table>

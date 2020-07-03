@@ -1,0 +1,31 @@
+<table class="table">
+
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Player name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Shirt number</th>
+            <th scope="col">Positon</th>
+            <th scope="col">Gs</th>
+            <th scope="col">Yellow cards</th>
+            <th scope="col">Red cards</th>
+            <th scope="col">Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let player of players; let i = index'>
+            <th scope="row">{{i+1}}</th>
+            <td>{{player.player_name}}</td>
+            <td>{{player.player_age}}</td>
+            <td>{{player.player_number}}</td>
+            <td>{{player.player_type}}</td>
+
+            <td>{{player.player_goals}}</td>
+            <td>{{player.player_yellow_cards}}</td>
+            <td>{{player.player_red_cards}}</td>
+            <td>{{player.player_country}}</td>
+        </tr>
+
+    </tbody>
+</table>
