@@ -35,3 +35,6 @@ export const environment = {
 
 
 // https://apiv2.apifootball.com/?action=get_events&from=2020-06-26&to=2020-06-27&league_id=148&APIkey=fd67343efddc02187d86d13f23d14ce2b6f138e91d340a42d4093dddf6834d7d
+
+
+// https://apiv2.apifootball.com/?action=get_teams&team_id=2611&APIkey=fd67343efddc02187d86d13f23d14ce2b6f138e91d340a42d4093dddf6834d7d

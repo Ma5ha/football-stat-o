@@ -4,8 +4,10 @@ import { TeamPageComponent } from './team-page/team-page.component';
 
 
 const routes: Routes = [{
-  path: 'team',
-  component: TeamPageComponent
+  path: ':team/:id',
+  component: TeamPageComponent,
+  pathMatch: 'full'
+
 }];
 
 @NgModule({

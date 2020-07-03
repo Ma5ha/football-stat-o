@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { rotateInAnimation, slideInDownOnEnterAnimation, flipInYOnEnterAnimation, slideInUpAnimation, fadeOutAnimation } from 'angular-animations';
-import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation, flipOnEnterAnimation, slideInLeftOnEnterAnimation, } from 'angular-animations';
+import { flipInYOnEnterAnimation, fadeOutAnimation } from 'angular-animations';
+import { slideInLeftOnEnterAnimation, } from 'angular-animations';
 import { StandigsService } from '../../shared/services/standigs.service'
 import { Router } from '@angular/router';
 
@@ -32,7 +32,7 @@ export class HomePageComponent implements OnInit {
   clickHandler(p) {
 
     this.team = p.team_id
-    this.s.navigate(['d'])
+    this.s.navigate([`${p.team_name}/${p.team_id}`])
 
   }
 
