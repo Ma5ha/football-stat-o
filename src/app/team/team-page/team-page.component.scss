@@ -1,17 +1,27 @@
 h1 {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 
 img {
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    width: 10%;
+    
+    
+    float: right;
 }
-div {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    text-align: center;
+
+.manager{
+    
+    text-align: start;
+}
+.header {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+    color:white;
+    background-color: rgb(80, 160, 202);
+width: 70%;
+margin: auto;
+resize: horizontal;
 }

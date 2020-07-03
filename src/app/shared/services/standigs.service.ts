@@ -31,7 +31,7 @@ export class StandigsService {
     return this.standingsService.get<Fixture[]>(`${environment.apiBase}${get_events}&league_id=148${environment.apiKey}`)
   }
 
-  getTeam(teamId: string): Observable<any> {
+  getTeam(teamId: number): Observable<any> {
 
 
     return this.standingsService.get(`${environment.apiBase}get_teams&team_id=${teamId}${environment.apiKey}`)

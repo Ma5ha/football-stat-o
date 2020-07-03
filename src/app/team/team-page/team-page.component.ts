@@ -12,24 +12,29 @@ export class TeamPageComponent implements OnInit {
 
   team
   players
+  coach
 
   constructor(private activatedRoute: ActivatedRoute, private standingsService: StandigsService) { }
 
   ngOnInit(): void {
-    let r = this.activatedRoute.snapshot.params
-    console.log(r.id)
 
 
-    this.standingsService.getTeam(r.id).subscribe(
-      r => {
-        this.team = r
-        // console.table(this.team[0].players)
-        this.players = r[0].players
 
-        console.table(r)
-      }
-    )
+    this.getClub()
   }
 
 
+  clubId(): number {
+    return this.activatedRoute.snapshot.params.id
+  }
+
+  getClub() {
+    this.standingsService.getTeam(this.clubId()).subscribe(result => {
+      this.team = result
+      this.players = result[0].players
+      this.coach = result[0].coaches[0]
+      console.table(result)
+
+    })
+  }
 }

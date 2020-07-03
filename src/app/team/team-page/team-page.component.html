@@ -1,12 +1,21 @@
 <h1>{{team[0].team_name}}</h1>
 
+<div class='header'>
 
-<img [src]='team[0].team_badge'>
 
-<!-- <div *ngFor='let player of team[0].players'>
+    <div class='manager'>
+        <h2>Manager: {{coach.coach_name}} </h2>
+        <h3>Age: {{coach.coach_age}} </h3>
+        <h3>Nationality: {{coach.coach_country}}</h3>
+    </div>
+
+
+    <img [src]='team[0].team_badge'>
+
+    <!-- <div *ngFor='let player of team[0].players'>
     {{player.player_name}}
 
 </div> -->
 
-
+</div>
 <app-players-table [players]='players'></app-players-table>
