@@ -4,12 +4,14 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Player name</th>
-            <th scope="col">Age</th>
-            <th scope="col">Shirt number</th>
+            <th scope="col" (click)='sortByAge()' [ngClass]='{selected: selected === "age"}'>Age</th>
+            <th scope="col" (click)='sortByShirtNumber()' [ngClass]='{selected: selected === "shirtNumber"}'>Shirt
+                number</th>
             <th scope="col">Positon</th>
-            <th scope="col">Gs</th>
-            <th scope="col">Yellow cards</th>
-            <th scope="col">Red cards</th>
+            <th scope="col" (click)='sortByGoals()' [ngClass]='{selected: selected === "goals"}'>Gs</th>
+            <th scope="col" (click)='sortByYellowCards()' [ngClass]='{selected: selected === "yellow"}'>Yellow cards
+            </th>
+            <th scope="col" (click)='sortByRedCards()' [ngClass]='{selected: selected === "red"}'>Red cards</th>
             <th scope="col">Country</th>
         </tr>
     </thead>
