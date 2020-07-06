@@ -4,7 +4,7 @@ import { environment } from '../../../environments/environment'
 import { Observable } from 'rxjs';
 import { Club } from '../types/club';
 import { Fixture } from '../types/fixture';
-import { StatisticArray, stat } from '../types/statistics';
+import { stat } from '../types/statistics';
 
 
 
@@ -15,7 +15,7 @@ import { StatisticArray, stat } from '../types/statistics';
 
 export class StandigsService {
 
-
+  defaultMAtch = '24562'
 
 
 
@@ -39,5 +39,11 @@ export class StandigsService {
   }
   getMatchStatisticBy(matchId: number): Observable<stat> {
     return this.standingsService.get<stat>(`${environment.apiBase}get_statistics&match_id=${matchId}${environment.apiKey}`)
+  }
+
+
+
+  getMatchEvent(matchID) {
+    return this.standingsService.get(`https://apiv2.apifootball.com/?action=get_events&match_id=${matchID}${environment.apiKey}`)
   }
 }

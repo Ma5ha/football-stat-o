@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { StandigsService } from 'src/app/shared/services/standigs.service';
 
 
-import { StatisticsEntity } from '../../shared/types/statistics';
 
 @Component({
   selector: 'app-mach-page',
@@ -37,6 +36,7 @@ export class MachPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMatchStatistic()
+    this.getMatch()
 
 
   }
@@ -96,10 +96,9 @@ export class MachPageComponent implements OnInit {
 
 
 
-  onSelect(event) {
-    console.log(event);
+  getMatch() {
+    this.standingsService.getMatchEvent(this.activatedRoute.snapshot.params.id).subscribe(x => console.log(x))
   }
-
 
 
 
