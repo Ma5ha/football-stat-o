@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StandigsService } from 'src/app/shared/services/standigs.service';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-mach-page',
@@ -16,6 +15,8 @@ export class MachPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMatchStatistic()
+
+
   }
 
   getMatchStatistic() {
@@ -24,7 +25,7 @@ export class MachPageComponent implements OnInit {
     this.standingsService.getMatchStatisticBy(this.activatedRoute.snapshot.params.id).subscribe(
       response => {
         this.statistics = response[this.matchID.toString()].statistics
-
+        console.log(this.statistics)
 
       }
     )
