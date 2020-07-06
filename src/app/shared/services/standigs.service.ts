@@ -36,5 +36,7 @@ export class StandigsService {
 
     return this.standingsService.get(`${environment.apiBase}get_teams&team_id=${teamId}${environment.apiKey}`)
   }
-
+  getMatchStatisticBy(matchId: number): Observable<any> {
+    return this.standingsService.get(`${environment.apiBase}get_statistics&match_id=${matchId}${environment.apiKey}`)
+  }
 }
