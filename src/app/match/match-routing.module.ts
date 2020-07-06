@@ -5,8 +5,9 @@ import { MachPageComponent } from './mach-page/mach-page.component';
 
 const routes: Routes = [
   {
-    path: ':match/:id',
-    component: MachPageComponent
+    path: 'match/:id',
+    component: MachPageComponent,
+    pathMatch: 'full'
   }];
 
 @NgModule({
