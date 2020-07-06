@@ -5,7 +5,7 @@ import { MachPageComponent } from './mach-page/mach-page.component';
 
 const routes: Routes = [
   {
-    path: 'match/:id',
+    path: 'match/statistic/:id',
     component: MachPageComponent,
     pathMatch: 'full'
   }];

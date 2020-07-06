@@ -9,9 +9,10 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [MachPageComponent],
   imports: [
-    SharedModule,
+
     CommonModule,
-    MatchRoutingModule
+    MatchRoutingModule,
+    SharedModule,
   ]
 })
 export class MatchModule { }
