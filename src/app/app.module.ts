@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableModule } from './table/table.module';
 import { TeamModule } from './team/team.module';
+import { MatchModule } from './match/match.module';
 
 
 @NgModule({
@@ -26,6 +27,8 @@ import { TeamModule } from './team/team.module';
     TableModule,
 
     TeamModule,
+
+    MatchModule,
 
   ],
   providers: [],
