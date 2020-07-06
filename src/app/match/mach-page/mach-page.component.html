@@ -1,18 +1,19 @@
 <p>mach-page works!</p>
+<hr>
 
-<div class='ball-possession'>
+<div class='stats'>
+    <ngx-charts-bar-horizontal-stacked [xAxisTickFormatting]="format" [schemeType]="'ordinal'" [view]="view"
+        [trimXAxisTicks]="showYAxis" [scheme]="colorScheme" [results]="statistics" [xAxis]="true" [yAxis]="showYAxis"
+        [legend]="showLegend" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" (select)="onSelect($event)">
+
+        <ng-template #tooltipTemplate let-model="model">
+            <div class='toolText'>
+                <h6>
+                    {{ model.statType}}&bull;{{model.name}}
+                </h6>
+                <h6>{{model.normalValue}}</h6>
+            </div>
+        </ng-template>
+    </ngx-charts-bar-horizontal-stacked>
 
 </div>
-<ngx-charts-bar-horizontal-stacked [xAxisTickFormatting]="format" [schemeType]="'ordinal'" [view]="view"
-    [trimXAxisTicks]="showYAxis" [scheme]="colorScheme" [results]="statistics" [xAxis]="true" [yAxis]="showYAxis"
-    [legend]="showLegend" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" (select)="onSelect($event)">
-
-    <ng-template #tooltipTemplate let-model="model">
-        <div class='toolText'>
-            <h6>
-                {{ model.statType}}&bull;{{model.name}}
-            </h6>
-            <h6>{{model.normalValue}}</h6>
-        </div>
-    </ng-template>
-</ngx-charts-bar-horizontal-stacked>
