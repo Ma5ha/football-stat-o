@@ -4,7 +4,7 @@ import { environment } from '../../../environments/environment'
 import { Observable } from 'rxjs';
 import { Club } from '../types/club';
 import { Fixture } from '../types/fixture';
-import { Statistics } from '../types/statistics';
+import { StatisticArray, stat } from '../types/statistics';
 
 
 
@@ -37,7 +37,7 @@ export class StandigsService {
 
     return this.standingsService.get(`${environment.apiBase}get_teams&team_id=${teamId}${environment.apiKey}`)
   }
-  getMatchStatisticBy(matchId: number): Observable<Statistics[]> {
-    return this.standingsService.get<Statistics[]>(`${environment.apiBase}get_statistics&match_id=${matchId}${environment.apiKey}`)
+  getMatchStatisticBy(matchId: number): Observable<stat> {
+    return this.standingsService.get<stat>(`${environment.apiBase}get_statistics&match_id=${matchId}${environment.apiKey}`)
   }
 }
