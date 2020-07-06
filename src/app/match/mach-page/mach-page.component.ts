@@ -11,6 +11,25 @@ import { StatisticsEntity } from '../../shared/types/statistics';
   styleUrls: ['./mach-page.component.scss']
 })
 export class MachPageComponent implements OnInit {
+
+
+  view: any[] = [700, 400];
+
+  // options
+  showXAxis: boolean = false;
+  showYAxis: boolean = true;
+
+  showLegend: boolean = true;
+  showXAxisLabel: boolean = true;
+
+  showYAxisLabel: boolean = true;
+  xAxisLabel: string = 'Percentage';
+
+  colorScheme = {
+    domain: ['#50A0CA', '#64AB47', '#AAAAAA']
+  };
+
+
   statistics
 
   matchID = this.activatedRoute.snapshot.params.id
@@ -30,17 +49,26 @@ export class MachPageComponent implements OnInit {
         this.statistics = response[this.matchID.toString()].statistics.map(x => {
 
           return {
+
+
             name: x.type,
             series: [
               {
+                statType: x.type,
                 name: 'home',
-                value: x.home
+                value: (parseInt(x.home) / (parseInt(x.home) + parseInt(x.away))) * 100,
+                normalValue: x.home
               },
               {
+                statType: x.type,
                 name: 'away',
-                value: x.away
+                value: (parseInt(x.away) / (parseInt(x.home) + parseInt(x.away))) * 100,
+                normalValue: x.away
               }
+
             ]
+
+
 
           }
 
@@ -58,4 +86,24 @@ export class MachPageComponent implements OnInit {
 
   }
 
+
+  format(value) {
+
+    return `${value}%`
+
+  }
+  //for delete 
+
+
+
+  onSelect(event) {
+    console.log(event);
+  }
+
+
+
+
+
 }
+
+
