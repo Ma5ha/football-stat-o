@@ -2,3 +2,70 @@
     display: flex;
     justify-content: center;
 }
+
+.tactic {
+    display: flex;
+    justify-content: center;
+}
+
+.home {
+    
+    display: flex;
+    height: 22%;
+    width: 45%;
+    position: absolute;
+    flex-direction: column;
+    padding-bottom: 2%;
+}
+.away {
+    display: flex;
+    position: absolute;
+    height: 55%;
+    width: 55%;
+    flex-direction: column-reverse;
+    padding-top: 20%;
+}
+
+span {
+    
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 200px 200px 200px 200px;
+
+}
+
+div.gk {
+    display: flex;
+    justify-content: center;
+}
+
+div.defender {
+    display: flex;
+    justify-content: space-around
+}
+
+.midfilders{
+    display: flex;
+    justify-content: space-around
+}
+.attackers {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.attacking-midfilders{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.defensive-midfilders{
+    display: flex;
+    justify-content: space-evenly;
+}
+div {
+    margin-top: auto;
+}
+
