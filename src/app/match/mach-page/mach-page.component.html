@@ -3,7 +3,8 @@
 <div class='tactic'>
     <div class='home'>
 
-        <div class='gk'>
+
+        <!-- <div class='gk'>
             <span class='gk'>
                 gk
             </span>
@@ -19,8 +20,8 @@
                 df
             </span>
 
-        </div>
-        <div class='defensive-midfilders'>
+        </div> -->
+        <!-- <div class='defensive-midfilders'>
             <span>
                 mid
             </span>
@@ -44,24 +45,24 @@
             </span>
 
 
-        </div>
+        </div> -->
 
-        <div class='attacking-midfilders'>
+        <!-- <div class='attacking-midfilders'>
             <span>
                 at
             </span>
 
-        </div>
+        </div> -->
 
 
-        <div class='attackers'>
+        <!-- <div class='attackers'>
 
             <span>
                 cf
             </span>
 
 
-        </div>
+        </div> -->
 
     </div>
 
@@ -140,18 +141,9 @@
 <hr>
 
 <div class='stats'>
-    <ngx-charts-bar-horizontal-stacked [xAxisTickFormatting]="format" [schemeType]="'ordinal'" [view]="view"
-        [trimXAxisTicks]="showYAxis" [scheme]="colorScheme" [results]="statistics" [xAxis]="true" [yAxis]="showYAxis"
-        [legend]="showLegend" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel">
 
-        <ng-template #tooltipTemplate let-model="model">
-            <div class='toolText'>
-                <h6>
-                    {{ model.statType}}&bull;{{model.name}}
-                </h6>
-                <h6>{{model.normalValue}}</h6>
-            </div>
-        </ng-template>
-    </ngx-charts-bar-horizontal-stacked>
+    <app-bar-chart [statistics]="statistics">
 
+
+    </app-bar-chart>
 </div>

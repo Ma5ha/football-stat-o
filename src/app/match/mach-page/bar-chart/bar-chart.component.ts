@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-bar-chart',
@@ -6,6 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bar-chart.component.scss']
 })
 export class BarChartComponent implements OnInit {
+
+  @Input()
+  statistics
+
+
+  view: any[] = [700, 400];
+
+  // options
+  showXAxis: boolean = false;
+  showYAxis: boolean = true;
+
+  showLegend: boolean = true;
+  showXAxisLabel: boolean = true;
+
+  showYAxisLabel: boolean = true;
+  xAxisLabel: string = 'Percentage';
+
+  colorScheme = {
+    domain: ['#50A0CA', '#64AB47', '#AAAAAA']
+  };
+
+
 
   constructor() { }
 

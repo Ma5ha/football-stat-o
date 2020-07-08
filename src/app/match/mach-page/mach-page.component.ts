@@ -12,23 +12,6 @@ import { StandigsService } from 'src/app/shared/services/standigs.service';
 export class MachPageComponent implements OnInit {
 
 
-  view: any[] = [700, 400];
-
-  // options
-  showXAxis: boolean = false;
-  showYAxis: boolean = true;
-
-  showLegend: boolean = true;
-  showXAxisLabel: boolean = true;
-
-  showYAxisLabel: boolean = true;
-  xAxisLabel: string = 'Percentage';
-
-  colorScheme = {
-    domain: ['#50A0CA', '#64AB47', '#AAAAAA']
-  };
-
-
   statistics
 
   matchID = this.activatedRoute.snapshot.params.id
@@ -97,7 +80,10 @@ export class MachPageComponent implements OnInit {
 
 
   getMatch() {
-    this.standingsService.getMatchEvent(this.activatedRoute.snapshot.params.id).subscribe(x => console.log(x))
+    this.standingsService.getMatchEvent(this.activatedRoute.snapshot.params.id)
+      .subscribe(x => {
+        console.log(x[0])
+      })
   }
 
 
