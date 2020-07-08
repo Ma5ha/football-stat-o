@@ -5,9 +5,10 @@ import { MatchRoutingModule } from './match-routing.module';
 import { MachPageComponent } from './mach-page/mach-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BarChartComponent } from './mach-page/bar-chart/bar-chart.component';
 
 @NgModule({
-  declarations: [MachPageComponent],
+  declarations: [MachPageComponent, BarChartComponent],
   imports: [
 
     CommonModule,
