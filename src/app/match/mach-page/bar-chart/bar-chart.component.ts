@@ -34,4 +34,9 @@ export class BarChartComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  format(value) {
+
+    return `${value}%`
+
+  }
 }
