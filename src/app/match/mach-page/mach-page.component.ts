@@ -37,6 +37,22 @@ export class MachPageComponent implements OnInit {
 
   }
 
+  matchCentre = {
+    goalscorers: [],
+    cards: [],
+    round: '',
+    stadium: '',
+    referee: '',
+    substitutions: {
+      away: [],
+      home: []
+    },
+    score: ''
+
+
+  }
+
+
   matchID = this.activatedRoute.snapshot.params.id
 
 
@@ -122,11 +138,38 @@ export class MachPageComponent implements OnInit {
         this.lineups.home.badge = x[0].team_home_badge
         this.lineups.away.badge = x[0].team_away_badge
 
+        this.matchCentre.goalscorers = x[0].goalscorer
+        this.matchCentre.cards = x[0].cards
+        this.matchCentre.round = x[0].match_round
+        this.matchCentre.referee = x[0].match_referee
+
+        this.matchCentre.stadium = x[0].match_stadium
+        this.matchCentre.substitutions.home = x[0].substitutions.home
+        this.matchCentre.substitutions.away = x[0].substitutions.away
+        this.matchCentre.score = x[0].match_hometeam_score + `:` + x[0].match_awayteam_score
 
       }
       )
 
 
+
+
+
+
+    // matchCentre= {
+    //   goalscorers: [],
+    //   cards: [],
+    //   round: '',
+    //   stadium: '',
+    //   referee: '',
+    //   substitutions: {
+    //     away: [],
+    //     home: []
+    //   },
+    //   score: ''
+
+
+    // }
 
   }
 }

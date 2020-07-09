@@ -6,7 +6,7 @@
 
 
         <h4>
-            Coach:{{lineups.home.coach[0].lineup_player}} </h4>
+            Coach: {{lineups.home.coach[0].lineup_player}} </h4>
 
 
         <div class="subs">
@@ -15,6 +15,46 @@
                 {{player.lineup_number}} </span>
         </div>
         <h6>Formation: {{lineups.home.formation}}</h6>
+    </div>
+
+    <div class="match_centre">
+
+
+        <h2>{{matchCentre.score}}</h2>
+        <h5>Statium: {{matchCentre.stadium}}</h5>
+        <h5>Referee: {{matchCentre.referee}}</h5>
+        <h5> {{matchCentre.round}}</h5>
+        <h5> Scorers</h5>
+        <h6 *ngFor='let goalscorer of matchCentre.goalscorers'>
+            {{goalscorer.time }}`
+            {{goalscorer.home_scorer }}
+            {{goalscorer.score }}
+            {{goalscorer.away_scorer}} </h6>
+        <h5>
+            Substitutes
+        </h5>
+        <div class="substititutes">
+            <div>
+                Home
+                <h6 *ngFor='let substitute of matchCentre.substitutions.home'>
+                    {{ substitute.time}}`{{substitute.substitution}}
+
+                </h6>
+            </div>
+            <div>
+                Away
+                <h6 *ngFor='let substitute of matchCentre.substitutions.away'>
+                    {{ substitute.time}}`{{substitute.substitution}}
+
+                </h6>
+            </div>
+        </div>
+
+
+
+
+
+
     </div>
     <br>
     <div class="awaySide">
