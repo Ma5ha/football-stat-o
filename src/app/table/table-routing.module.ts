@@ -5,7 +5,8 @@ import { TablePageComponent } from './table-page/table-page.component';
 
 const routes: Routes = [{
   path: 'table',
-  component: TablePageComponent
+  component: TablePageComponent,
+  data: { state: 'table' },
 }];
 
 @NgModule({

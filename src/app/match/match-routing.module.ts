@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: 'match/statistic/:id',
     component: MachPageComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: { state: 'match' },
   }];
 
 @NgModule({

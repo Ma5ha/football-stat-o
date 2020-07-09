@@ -6,6 +6,7 @@ import { TeamPageComponent } from './team-page/team-page.component';
 const routes: Routes = [{
   path: ':team/:id',
   component: TeamPageComponent,
+  data: { state: 'team' },
   pathMatch: 'full'
 
 }];
