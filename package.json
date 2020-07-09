@@ -24,8 +24,10 @@
     "@ng-bootstrap/ng-bootstrap": "^6.2.0",
     "@swimlane/ngx-charts": "^14.0.0",
     "angular-animations": "0.0.10",
+    "express": "^4.17.1",
     "moment": "^2.27.0",
     "ngx-router-animations": "0.0.9",
+    "path": "^0.12.7",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
