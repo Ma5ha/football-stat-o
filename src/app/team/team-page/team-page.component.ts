@@ -14,11 +14,15 @@ export class TeamPageComponent implements OnInit {
   players
   coach
 
+
   constructor(private activatedRoute: ActivatedRoute, private standingsService: StandigsService) { }
 
   ngOnInit(): void {
 
-
+    this.activatedRoute.params.subscribe(
+      x =>
+        this.getClub()
+    )
 
     this.getClub()
   }

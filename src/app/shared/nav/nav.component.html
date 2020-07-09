@@ -6,7 +6,7 @@
 
 
 <div class='large message'>
-    <img src="../../../assets/EPL-Logo.png">
+    <img *ngFor='let team of prop' [src]='team.team_badge' [routerLink]="[team.team_name,team.team_id]">
 
 
 </div>

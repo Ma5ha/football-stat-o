@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { StandigsService } from '../services/standigs.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,10 +10,17 @@ export class NavComponent implements OnInit {
 
   @Input() scrollPos = 'saa'
 
-
-  constructor() { }
+  prop
+  constructor(private standingService: StandigsService) { }
 
   ngOnInit(): void {
+    this.standingService.getStandings().subscribe(
+      x => {
+        this.prop = x
+        console.log(x, 'nav')
+      }
+    )
   }
+
 
 }

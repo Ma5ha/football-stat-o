@@ -57,14 +57,19 @@ margin-left: 10px;
 }
 
 .large {
-        // display: flex;
+       display: row;
         justify-self:center;
     // position: absolute;
     // align-self:flex-start;
     text-align: center;
     // color: #ffffff;
      margin-top: 100px;
-     cursor: none;
+     
   
     
+}
+.large img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
