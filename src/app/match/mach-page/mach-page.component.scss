@@ -41,3 +41,41 @@ img{
 h2{
     display: inline;
 }
+
+.subs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+span{
+    background-color: #50A0CA;
+    display: inline-flex;
+ 
+    width: 24px;
+    
+   
+ 
+    border-radius: 200px 200px 200px 200px;
+  
+    text-align: center;
+    
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+span.away{
+    display: inline-flex;
+    background-color:  #EDAC07;
+      
+ 
+    width: 24px;
+ 
+    border-radius: 200px 200px 200px 200px;
+  
+    text-align: center;
+    
+    justify-content: space-evenly;
+    margin: auto;
+}

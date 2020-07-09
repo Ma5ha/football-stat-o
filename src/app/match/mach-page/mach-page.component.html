@@ -1,19 +1,37 @@
 <div class='head'>
     <div class="homeSide">
-        <h2>Home</h2> <img [src]="lineups.home.badge" alt="">
-        <h3> Team: {{lineups.home.team}}</h3>
+
+        <h2>Home side</h2> <img [src]="lineups.home.badge" alt="">
+        <h3> Team name: {{lineups.home.team}}</h3>
+
 
         <h4>
             Coach:{{lineups.home.coach[0].lineup_player}} </h4>
+
+
+        <div class="subs">
+            <h5>Substitutes:</h5>
+            <span *ngFor='let player of lineups.home.subs'>
+                {{player.lineup_number}} </span>
+        </div>
+        <h6>Formation: {{lineups.home.formation}}</h6>
     </div>
     <br>
     <div class="awaySide">
-        <h2>Away</h2><img [src]="lineups.away.badge" alt="">
-        <h3> Team:{{lineups.away.team}}</h3>
+        <h2>Away side </h2><img [src]="lineups.away.badge" alt="">
+        <h3> Team name:{{lineups.away.team}}</h3>
+
 
         <h4>
             Coach: {{lineups.away.coach[0].lineup_player}}
         </h4>
+
+        <div class="subs">
+            <h5>Substitutes:</h5>
+            <span class='away' *ngFor='let player of lineups.away.subs'>
+                {{player.lineup_number}} </span>
+        </div>
+        <h6>Formation: {{lineups.away.formation}}</h6>
     </div>
 
 
