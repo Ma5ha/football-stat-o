@@ -129,6 +129,7 @@ export class MachPageComponent implements OnInit {
         this.lineups.home.formation = x[0].match_hometeam_system
         this.lineups.home.lineup = sortPlayersToUnits(x[0].lineup.home.starting_lineups, x[0].match_hometeam_system)
         this.lineups.away.lineup = sortPlayersToUnits(x[0].lineup.away.starting_lineups, x[0].match_awayteam_system)
+        console.log(this.lineups.away.lineup)
         this.lineups.home.subs = x[0].lineup.home.substitutes
         this.lineups.away.subs = x[0].lineup.away.substitutes
         this.lineups.home.coach = x[0].lineup.home.coach
@@ -198,10 +199,10 @@ function sortPlayersToUnits(players: any[], formation: string) {
 
 function sortByLineUpPosition(players: any[]) {
   players.sort((playerA, playerB) => {
-    if (playerA.lineup_position < playerB.lineup_position) {
+    if (parseInt(playerA.lineup_position) < parseInt(playerB.lineup_position)) {
       return -1;
     }
-    if (playerA.lineup_position > playerB.lineup_position) {
+    if (parseInt(playerA.lineup_position) > parseInt(playerB.lineup_position)) {
       return 1;
     }
 

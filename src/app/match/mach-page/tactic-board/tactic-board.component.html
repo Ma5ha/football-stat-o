@@ -6,7 +6,7 @@
 
 
     <div *ngFor='let unit of home;'>
-        <span *ngFor='let player of unit'>
+        <span *ngFor='let player of unit' placement="top" [ngbTooltip]="player.lineup_player">
             {{player.lineup_number}} </span>
     </div>
 
@@ -19,7 +19,7 @@
 <div class="away">
     <div class="subs"></div>
     <div *ngFor='let unit of away; let i = index'>
-        <span class='awayTeam' *ngFor='let player of unit'>
+        <span class='awayTeam' *ngFor='let player of unit' placement="top" [ngbTooltip]="player.lineup_player">
             {{player.lineup_number}}
 
         </span>

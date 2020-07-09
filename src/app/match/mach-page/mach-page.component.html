@@ -11,7 +11,7 @@
 
         <div class="subs">
             <h5>Substitutes:</h5>
-            <span *ngFor='let player of lineups.home.subs'>
+            <span *ngFor='let player of lineups.home.subs' placement="top" [ngbTooltip]="player.lineup_player">
                 {{player.lineup_number}} </span>
         </div>
         <h6>Formation: {{lineups.home.formation}}</h6>
@@ -68,7 +68,8 @@
 
         <div class="subs">
             <h5>Substitutes:</h5>
-            <span class='away' *ngFor='let player of lineups.away.subs'>
+            <span class='away' *ngFor='let player of lineups.away.subs' placement="top"
+                [ngbTooltip]="player.lineup_player">
                 {{player.lineup_number}} </span>
         </div>
         <h6>Formation: {{lineups.away.formation}}</h6>
