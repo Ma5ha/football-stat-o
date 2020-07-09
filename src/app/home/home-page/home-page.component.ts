@@ -32,7 +32,11 @@ export class HomePageComponent implements OnInit {
   clickHandler(p) {
 
     this.team = p.team_id
-    this.s.navigate([`${p.team_name}/${p.team_id}`])
+    setTimeout(() => {
+      this.s.navigate([`${p.team_name}/${p.team_id}`])
+    }, 1000)
+
+
 
   }
 

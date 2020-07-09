@@ -1,103 +1,112 @@
-<div class='head'>
-    <div class="homeSide">
+<ng-container *ngIf='statistics.length > 1'>
 
-        <h2>Home side</h2> <img [src]="lineups.home.badge" alt="">
-        <h3> Team name: {{lineups.home.team}}</h3>
+    <div class='head'>
+        <div class="homeSide">
 
-
-        <h4>
-            Coach: {{lineups.home.coach[0].lineup_player}} </h4>
+            <h2>Home side</h2> <img [src]="lineups.home.badge" alt="">
+            <h3> Team name: {{lineups.home.team}}</h3>
 
 
-        <div class="subs">
-            <h5>Substitutes:</h5>
-            <span *ngFor='let player of lineups.home.subs' placement="top" [ngbTooltip]="player.lineup_player">
-                {{player.lineup_number}} </span>
-        </div>
-        <h6>Formation: {{lineups.home.formation}}</h6>
-    </div>
-
-    <div class="match_centre">
+            <h4>
+                Coach: {{lineups.home.coach[0].lineup_player}} </h4>
 
 
-        <h2>{{matchCentre.score}}</h2>
-        <h5>Statium: {{matchCentre.stadium}}</h5>
-        <h5>Referee: {{matchCentre.referee}}</h5>
-        <h5> {{matchCentre.round}}</h5>
-        <h5> Scorers</h5>
-        <h6 *ngFor='let goalscorer of matchCentre.goalscorers'>
-            {{goalscorer.time }}`
-            {{goalscorer.home_scorer }}
-            {{goalscorer.score }}
-            {{goalscorer.away_scorer}} </h6>
-        <h5>
-            Substitutes
-        </h5>
-        <div class="substititutes">
-            <div>
-                Home
-                <h6 *ngFor='let substitute of matchCentre.substitutions.home'>
-                    {{ substitute.time}}`{{substitute.substitution}}
-
-                </h6>
+            <div class="subs">
+                <h5>Substitutes:</h5>
+                <span *ngFor='let player of lineups.home.subs' placement="top" [ngbTooltip]="player.lineup_player">
+                    {{player.lineup_number}} </span>
             </div>
-            <div>
-                Away
-                <h6 *ngFor='let substitute of matchCentre.substitutions.away'>
-                    {{ substitute.time}}`{{substitute.substitution}}
+            <h6>Formation: {{lineups.home.formation}}</h6>
+        </div>
 
-                </h6>
+        <div class="match_centre">
+
+
+            <h2>{{matchCentre.score}}</h2>
+            <h5>Statium: {{matchCentre.stadium}}</h5>
+            <h5>Referee: {{matchCentre.referee}}</h5>
+            <h5> {{matchCentre.round}}</h5>
+            <h5> Scorers</h5>
+            <h6 *ngFor='let goalscorer of matchCentre.goalscorers'>
+                {{goalscorer.time }}`
+                {{goalscorer.home_scorer }}
+                {{goalscorer.score }}
+                {{goalscorer.away_scorer}} </h6>
+            <h5>
+                Substitutes
+            </h5>
+            <div class="substititutes">
+                <div>
+                    Home
+                    <h6 *ngFor='let substitute of matchCentre.substitutions.home'>
+                        {{ substitute.time}}`{{substitute.substitution}}
+
+                    </h6>
+                </div>
+                <div>
+                    Away
+                    <h6 *ngFor='let substitute of matchCentre.substitutions.away'>
+                        {{ substitute.time}}`{{substitute.substitution}}
+
+                    </h6>
+                </div>
             </div>
+
+
+
+
+
+
+        </div>
+        <br>
+        <div class="awaySide">
+            <h2>Away side </h2><img [src]="lineups.away.badge" alt="">
+            <h3> Team name:{{lineups.away.team}}</h3>
+
+
+            <h4>
+                Coach: {{lineups.away.coach[0].lineup_player}}
+            </h4>
+
+            <div class="subs">
+                <h5>Substitutes:</h5>
+                <span class='away' *ngFor='let player of lineups.away.subs' placement="top"
+                    [ngbTooltip]="player.lineup_player">
+                    {{player.lineup_number}} </span>
+            </div>
+            <h6>Formation: {{lineups.away.formation}}</h6>
         </div>
 
 
 
-
-
-
     </div>
-    <br>
-    <div class="awaySide">
-        <h2>Away side </h2><img [src]="lineups.away.badge" alt="">
-        <h3> Team name:{{lineups.away.team}}</h3>
+    <hr>
 
 
-        <h4>
-            Coach: {{lineups.away.coach[0].lineup_player}}
-        </h4>
+    <div class='warp'>
+        <app-tactic-board [home]='lineups.home.lineup' [away]='lineups.away.lineup'></app-tactic-board>
 
-        <div class="subs">
-            <h5>Substitutes:</h5>
-            <span class='away' *ngFor='let player of lineups.away.subs' placement="top"
-                [ngbTooltip]="player.lineup_player">
-                {{player.lineup_number}} </span>
-        </div>
-        <h6>Formation: {{lineups.away.formation}}</h6>
     </div>
 
 
 
-</div>
-<hr>
-
-
-<div class='warp'>
-    <app-tactic-board [home]='lineups.home.lineup' [away]='lineups.away.lineup'></app-tactic-board>
-
-</div>
 
 
 
 
+    <hr>
+
+    <div class='stats'>
+
+        <app-bar-chart [statistics]="statistics">
 
 
-
-<hr>
-
-<div class='stats'>
-
-    <app-bar-chart [statistics]="statistics">
+        </app-bar-chart>
+    </div>
+</ng-container>
 
 
-    </app-bar-chart>
-</div>
+<ng-container *ngIf='statistics.length < 1'>
+
+    <h1>No data for this fixture or fixture not started yet </h1>
+</ng-container>
