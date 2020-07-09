@@ -15,7 +15,7 @@ export class LayoutComponent implements OnInit {
   @HostListener('window:scroll')
   scrollHandler() {
 
-    if (window.scrollY < 1) return false
+    if (window.scrollY < 1) return true
     return false
   }
 
