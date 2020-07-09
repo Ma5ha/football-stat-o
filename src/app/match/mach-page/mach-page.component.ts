@@ -14,8 +14,25 @@ export class MachPageComponent implements OnInit {
 
   statistics
 
+  lineups = {
+    home: {
+      lineup: [],
+      formation: ''
+    },
+    away: {
+      lineup: [],
+      formation: ''
+    }
+
+  }
+
   matchID = this.activatedRoute.snapshot.params.id
+
+
   constructor(private activatedRoute: ActivatedRoute, private standingsService: StandigsService) { }
+
+
+
 
   ngOnInit(): void {
     this.getMatchStatistic()
@@ -70,11 +87,7 @@ export class MachPageComponent implements OnInit {
   }
 
 
-  format(value) {
 
-    return `${value}%`
-
-  }
   //for delete 
 
 
@@ -83,6 +96,12 @@ export class MachPageComponent implements OnInit {
     this.standingsService.getMatchEvent(this.activatedRoute.snapshot.params.id)
       .subscribe(x => {
         console.log(x[0])
+
+        this.lineups.away.formation = x[0].match_awayteam_system
+        this.lineups.home.formation = x[0].match_hometeam_system
+        this.lineups.home.lineup = sortPlayersToUnits(x[0].lineup.home.starting_lineups, x[0].match_hometeam_system)
+        this.lineups.away.lineup = sortPlayersToUnits(x[0].lineup.away.starting_lineups, x[0].match_awayteam_system)
+
       })
   }
 
@@ -92,3 +111,41 @@ export class MachPageComponent implements OnInit {
 }
 
 
+function sortPlayersToUnits(players: any[], formation: string) {
+
+  players = sortByLineUpPosition(players)
+
+
+  let formationArray = [1]
+  formation.split('-').forEach(x => formationArray.push(parseInt(x)))
+  let array = []
+
+  formationArray.forEach(x => {
+    let unit = players.slice(0, x)
+    players.splice(0, x)
+    array.push(unit)
+  })
+
+
+  return array
+
+
+}
+
+function sortByLineUpPosition(players: any[]) {
+  players.sort((playerA, playerB) => {
+    if (playerA.lineup_position < playerB.lineup_position) {
+      return -1;
+    }
+    if (playerA.lineup_position > playerB.lineup_position) {
+      return 1;
+    }
+
+    return 0;
+  }
+
+  )
+
+
+  return players
+}

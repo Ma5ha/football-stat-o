@@ -1,27 +1,22 @@
-<p>mach-page works!</p>
+<!-- <p>mach-page works!</p>
 
 <div class='tactic'>
     <div class='home'>
 
 
-        <!-- <div class='gk'>
-            <span class='gk'>
-                gk
-            </span>
-        </div>
-        <div class='defender'>
-            <span class='defender'>
-                df
-            </span>
-            <span class='defender'>
-                df
-            </span>
-            <span class='defender'>
-                df
+
+        <div class='defender' *ngFor='let unit of lineups.home.lineup'>
+
+
+            <span class='defender' *ngFor='let player of unit'>
+                <p>{{player.lineup_number}}</p>
+
             </span>
 
+
+
         </div> -->
-        <!-- <div class='defensive-midfilders'>
+<!-- <div class='defensive-midfilders'>
             <span>
                 mid
             </span>
@@ -47,7 +42,7 @@
 
         </div> -->
 
-        <!-- <div class='attacking-midfilders'>
+<!-- <div class='attacking-midfilders'>
             <span>
                 at
             </span>
@@ -55,86 +50,48 @@
         </div> -->
 
 
-        <!-- <div class='attackers'>
+<!-- <div class='attackers'>
 
             <span>
                 cf
             </span>
 
 
-        </div> -->
+        </div>
 
     </div>
 
     <div class="away">
-        <div class='gk'>
-            <span class='gk'>
-                gk
+
+        <div class='defender' *ngFor='let unit of lineups.away.lineup; let i = index'>
+            <span class='defender' *ngFor='let player of unit'>
+                <p>{{player.lineup_number}}</p>
+
             </span>
         </div>
-        <div class='defender'>
-            <span class='defender'>
-                df
-            </span>
-            <span class='defender'>
-                df
-            </span>
-            <span class='defender'>
-                df
-            </span>
-
-        </div>
-        <div class='defensive-midfilders'>
-            <span>
-                mid
-            </span>
-            <span>
-                mid
-            </span>
-
-        </div>
-
-        <div class='midfilders'>
-
-
-            <span>
-                mid
-            </span>
-            <span>
-                mid
-            </span>
-
-
-
-        </div>
-
-        <div class='attacking-midfilders'>
-            <span>
-                am
-            </span>
-            <span>
-                am
-            </span>
-
-        </div>
-
-
-        <div class='attackers'>
-
-            <span class='defender'>
-                df
-            </span>
-
-
-        </div>
-
-
-
 
 
     </div>
+
     <img src='../../../assets/pngguru.com.png'>
-</div>
+
+
+</div> -->
+
+
+
+
+
+
+
+
+<app-tactic-board [home]='lineups.home.lineup' [away]='lineups.away.lineup'></app-tactic-board>
+
+
+
+
+
+
 
 
 

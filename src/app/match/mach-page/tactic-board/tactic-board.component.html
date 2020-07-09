@@ -1,0 +1,28 @@
+<div class="home">
+
+    <!-- <div class='player' *ngFor='let unit of home; let i = index'>
+       
+    </div> -->
+
+
+    <div *ngFor='let unit of home;'>
+        <span *ngFor='let player of unit'>
+            {{player.lineup_number}} </span>
+    </div>
+
+
+
+
+</div>
+
+
+<img src='../../../assets/pngguru.com.png'>
+<div class="away">
+
+    <div *ngFor='let unit of away; let i = index'>
+        <span *ngFor='let player of unit'>
+            {{player.lineup_number}}
+
+        </span>
+    </div>
+</div>

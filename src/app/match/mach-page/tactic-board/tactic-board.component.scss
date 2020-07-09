@@ -1,0 +1,65 @@
+:host {
+    display: flex;
+    width: 80%;
+    height: 50%;
+    margin: auto;
+
+}
+
+img{
+    
+}
+.home {
+    position: absolute;
+    width: 41%;
+    height: 61%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.away {
+   display: inline-flex;
+   
+    width: 41%;
+    height: 61%;
+    position: absolute;
+    margin-left:42%;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+
+div.defender {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1%;
+}
+
+span {
+   
+    display: flex;
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    border-radius: 200px 200px 200px 200px;
+    padding: 50%;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+
+
+div {
+
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    width: 40px;
+
+}

@@ -6,9 +6,10 @@ import { MachPageComponent } from './mach-page/mach-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BarChartComponent } from './mach-page/bar-chart/bar-chart.component';
+import { TacticBoardComponent } from './mach-page/tactic-board/tactic-board.component';
 
 @NgModule({
-  declarations: [MachPageComponent, BarChartComponent],
+  declarations: [MachPageComponent, BarChartComponent, TacticBoardComponent],
   imports: [
 
     CommonModule,
