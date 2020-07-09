@@ -24,7 +24,7 @@ export class BarChartComponent implements OnInit {
   xAxisLabel: string = 'Percentage';
 
   colorScheme = {
-    domain: ['#50A0CA', '#64AB47', '#AAAAAA']
+    domain: ['#50A0CA', '#EDAC07', '#AAAAAA']
   };
 
 

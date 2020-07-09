@@ -22,14 +22,22 @@ p {
     
     justify-content: space-evenly;
 }
-.home, .away {
-   position: absolute;
 
 
+
+.warp {
+    position: relative
+}
+
+.head{
+    display: flex;
+    justify-content: space-evenly;
 }
 img{
-
-    width: 80%;
-    justify-self: center;
-    
-    }
+    display: inline;
+    width: 40px;
+ 
+}
+h2{
+    display: inline;
+}

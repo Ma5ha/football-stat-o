@@ -16,12 +16,23 @@ export class MachPageComponent implements OnInit {
 
   lineups = {
     home: {
+      badge: '',
+      team: '',
+
+      coach: {},
       lineup: [],
-      formation: ''
+      formation: '',
+      subs: []
     },
     away: {
+      badge: '',
+
+      team: '',
       lineup: [],
-      formation: ''
+      formation: '',
+      subs: [],
+      coach: {},
+
     }
 
   }
@@ -95,19 +106,29 @@ export class MachPageComponent implements OnInit {
   getMatch() {
     this.standingsService.getMatchEvent(this.activatedRoute.snapshot.params.id)
       .subscribe(x => {
-        console.log(x[0])
+        console.log(x[0]
+        )
 
         this.lineups.away.formation = x[0].match_awayteam_system
         this.lineups.home.formation = x[0].match_hometeam_system
         this.lineups.home.lineup = sortPlayersToUnits(x[0].lineup.home.starting_lineups, x[0].match_hometeam_system)
         this.lineups.away.lineup = sortPlayersToUnits(x[0].lineup.away.starting_lineups, x[0].match_awayteam_system)
+        this.lineups.home.subs = x[0].lineup.home.substitutes
+        this.lineups.away.subs = x[0].lineup.away.substitutes
+        this.lineups.home.coach = x[0].lineup.home.coach
+        this.lineups.away.coach = x[0].lineup.away.coach
+        this.lineups.home.team = x[0].match_hometeam_name
+        this.lineups.away.team = x[0].match_awayteam_name
+        this.lineups.home.badge = x[0].team_home_badge
+        this.lineups.away.badge = x[0].team_away_badge
 
-      })
+
+      }
+      )
+
+
+
   }
-
-
-
-
 }
 
 
