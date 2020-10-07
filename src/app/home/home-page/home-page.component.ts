@@ -20,6 +20,7 @@ export class HomePageComponent implements OnInit {
     this.standingService.getStandings().subscribe(
       x => {
         this.prop = x
+        console.log(x)
 
       }
     )

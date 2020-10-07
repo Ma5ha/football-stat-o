@@ -251,6 +251,7 @@ export class TablePageComponent implements OnInit {
     let monday = moment().isoWeekday(1).format("YYYY-MM-DD")
     this.standingsService.getFixtures(monday).subscribe(fixtures => {
       this.mondayFixures = fixtures
+      console.log(fixtures)
 
 
 
@@ -266,6 +267,7 @@ export class TablePageComponent implements OnInit {
   getTuesdayFixures(): void {
 
     let tuesday = moment().isoWeekday(2).format("YYYY-MM-DD")
+    console.log(tuesday)
     this.standingsService.getFixtures(tuesday).subscribe(fixtures => {
       this.tuesdayFixures = fixtures
 
